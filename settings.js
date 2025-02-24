@@ -17,9 +17,4 @@ export const config = {
         "kmynHLQ",
         "7e5b7248-69b1-4f06-beae-948c951c8d3f"
     ]
-    // sheets: [
-    //     "91b4024d-d70e-4889-8f0b-2136dc81f269",
-    //     "UjzmqnP",
-    //     "kmynHLQ"
-    // ]
 }
