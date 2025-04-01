@@ -1,14 +1,14 @@
 //settings file
 export const config = {
-    period:60, //in seconds
+    period:20, //in seconds
     tenant: "spdataisreal.eu.qlikcloud.com",
     webIntegrationId: "_5d4e5o5y9SyCP-0kUrr7oyZyLpKylvA",
     appId: "a6473db3-5b61-4197-b433-a8bbacd8676b",
     sheets: [
-        "kmynHLQ",
-        "UjzmqnP",
-        "bpqPhH",
-        "b8b0ac18-8072-42c2-b33f-ef97ca3cfece"
+        "kmynHLQ", //QTD
+        "UjzmqnP", //YTD
+        "bpqPhH",  //Meeting AM
+        "b8b0ac18-8072-42c2-b33f-ef97ca3cfece" //Meeting BDR
     ]
     // ========================================
     // appId: "97b6233b-2ce6-43c1-9705-fce4897232a1",
