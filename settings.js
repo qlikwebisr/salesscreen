@@ -17,12 +17,12 @@ export const config = {
         //Meeting AM
         {
             "appId": "40a3f48e-e769-4a6b-826e-9b08860becec",
-            "sheetId": "85513b68-f5e5-469c-b2ca-0ae8fd274307",
+            "sheetId": "bpqPhH",
         },
         //Meeting BDR
         {
             "appId": "40a3f48e-e769-4a6b-826e-9b08860becec",
-            "sheetId": "2c2f3c4d-1c42-46c9-84de-903bee544a79",
+            "sheetId": "b8b0ac18-8072-42c2-b33f-ef97ca3cfece",
         }
        
     ]
