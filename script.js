@@ -49,7 +49,7 @@ for (let index = 0; index < config.sheets.length; index++) {
 
     console.log('sheet id: ', config.sheets[index]);
 
-    src = `https://${config.tenant}/single/?appid=${config.appId}&sheet=${config.sheets[index]}&theme=breeze&opt=nointeraction,noselections`;
+    src = `https://${config.tenant}/single/?appid=${config.sheets[index].appId}&sheet=${config.sheets[index].sheetId}&theme=breeze&opt=nointeraction,noselections`;
 
     console.log('src: ', src);
 
