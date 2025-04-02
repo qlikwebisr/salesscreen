@@ -1,6 +1,6 @@
 //settings file
 export const config = {
-    period: 60, //in seconds
+    period: 20, //in seconds
     tenant: "spdataisreal.eu.qlikcloud.com",
     webIntegrationId: "_5d4e5o5y9SyCP-0kUrr7oyZyLpKylvA",
     sheets: [
