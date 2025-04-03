@@ -19,7 +19,7 @@ export const config = {
             "appId": "40a3f48e-e769-4a6b-826e-9b08860becec",
             "sheetId": "bpqPhH",
         },
-        //Meeting BDR
+        //Meeting BDR- Sales
         {
             "appId": "40a3f48e-e769-4a6b-826e-9b08860becec",
             "sheetId": "b8b0ac18-8072-42c2-b33f-ef97ca3cfece",
