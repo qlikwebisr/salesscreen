@@ -39,6 +39,19 @@ var iframe = `<iframe src = "${src}"></iframe>`;
 const iframe_container = document.getElementById('iframe-container');
 iframe_container.innerHTML = iframe;  */
 
+//create code for generate random string for token, 8 letters long, use only
+function generateRandomString(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
+const randomToken = generateRandomString(8);
+console.log('Generated token:', randomToken);
+
 var src = ``;
 const iframe_container = document.getElementById('iframe-container');
 
@@ -49,7 +62,7 @@ for (let index = 0; index < config.sheets.length; index++) {
 
     console.log('sheet id: ', config.sheets[index]);
 
-    src = `https://${config.tenant}/single/?appid=${config.sheets[index].appId}&sheet=${config.sheets[index].sheetId}&theme=breeze&opt=nointeraction,noselections`;
+    src = `https://${config.tenant}/single/?appid=${config.sheets[index].appId}&sheet=${config.sheets[index].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
 
     console.log('src: ', src);
 
