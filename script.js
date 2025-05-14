@@ -64,7 +64,7 @@ let ind = 1;
 setInterval(() => {
   //reset counter
     if(ind >= config.sheets.length) {
-        ind= 1;
+        ind= 0;
     }
 
     //with one iframe
@@ -74,8 +74,6 @@ setInterval(() => {
 
     var find_iframe = document.querySelector('iframe');
     find_iframe.src = src;
-
-    //iframe_container.innerHTML = iframe;
 
     console.log('index', ind);
 
