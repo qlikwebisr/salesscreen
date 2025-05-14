@@ -68,7 +68,7 @@ setInterval(() => {
     }
 
     //with one iframe
-    src = `https://${config.tenant}/single/?appid=${config.appId}&sheet=${config.sheets[ind]}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
+    src = `https://${config.tenant}/single/?appid=${config.sheets[ind].appId}&sheet=${config.sheets[ind].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
     //iframe = `<iframe src = "${src}"></iframe>`;
     console.log('src', src); 
 
