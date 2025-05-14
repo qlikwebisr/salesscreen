@@ -52,52 +52,32 @@ function generateRandomString(length) {
 const randomToken = generateRandomString(8);
 console.log('Generated token:', randomToken);
 
-var src = ``;
 const iframe_container = document.getElementById('iframe-container');
 
-//construct divs with frames
-var iframes = '<div class="frames">';
+var src = `https://${config.tenant}/single/?appid=${config.sheets[0].appId}&sheet=${config.sheets[0].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
+var iframe = `<iframe src = "${src}"></iframe>`;
+//add iframe to the container
+iframe_container.innerHTML = iframe;
 
-for (let index = 0; index < config.sheets.length; index++) {
-
-    console.log('sheet id: ', config.sheets[index]);
-
-    src = `https://${config.tenant}/single/?appid=${config.sheets[index].appId}&sheet=${config.sheets[index].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
-
-    console.log('src: ', src);
-
-    iframes += `<div class="iframe_box iframe_box_${index}" style="display:${(index == 0) ? 'block' : 'none'}"  id-frame=${index}>`;
-    //iframes += `<h1>Iframe ${index}</h1>`;
-    iframes += `<iframe src = "${src}"></iframe></div>`
-}
-
-iframes +=`</div>`
-
-iframe_container.innerHTML = iframes; 
-
-//change between iframes
-let ind = 0;
+let ind = 1;
 
 setInterval(() => {
   //reset counter
     if(ind >= config.sheets.length) {
-        ind= 0;
+        ind= 1;
     }
-    //hide all iframe_boxes
-    document.querySelectorAll('.iframe_box').forEach(framebox => {
-        framebox.style.display="none";
-    });
-    //show the relevant box
-    document.querySelector('.iframe_box_' + ind).style.display="block";
 
-     /*   
     //with one iframe
-    src = `https://${config.tenant}/single/?appid=${config.appId}&sheet=${config.sheets[index]}&theme=breeze&opt=nointeraction,noselections`;
-    iframe = `<iframe src = "${src}"></iframe>`;
+    src = `https://${config.tenant}/single/?appid=${config.appId}&sheet=${config.sheets[ind]}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
+    //iframe = `<iframe src = "${src}"></iframe>`;
     console.log('src', src); 
-    iframe_container.innerHTML = iframe; */
 
-    //console.log('index', ind);
+    var find_iframe = document.querySelector('iframe');
+    find_iframe.src = src;
+
+    //iframe_container.innerHTML = iframe;
+
+    console.log('index', ind);
 
     ind++;
 
