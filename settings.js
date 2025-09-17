@@ -16,8 +16,8 @@ export const config = {
         },
         //Meeting AM
         {
-            "appId": "40a3f48e-e769-4a6b-826e-9b08860becec",
-            "sheetId": "85513b68-f5e5-469c-b2ca-0ae8fd274307",
+            "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
+            "sheetId": "VgPvswt",
         },
         //Meeting BDR- Sales
         {
