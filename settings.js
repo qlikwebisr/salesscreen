@@ -23,7 +23,21 @@ export const config = {
         {
             "appId": "40a3f48e-e769-4a6b-826e-9b08860becec",
             "sheetId": "af32c3bb-2db5-4385-aaae-5dae153d33f2",
+        },
+        //New AM screen
+        {
+            "appId": "feaf2f99-bfde-4f1d-80f8-7aa7e9b9e938",
+            "sheetId": "QaNThq",
+        },
+        //New BDR screen
+        {
+            "appId": "feaf2f99-bfde-4f1d-80f8-7aa7e9b9e938",
+            "sheetId": "vjC",
+        },
+        //New Q4 screen
+        {
+            "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
+            "sheetId": "gYUVs",
         }
-       
     ]
 }
