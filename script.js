@@ -51,7 +51,7 @@ function generateRandomString(length) {
 
 //set background based on sheet config
 function setBackground(sheetConfig) {
-  const container = document.getElementById('iframe-container');
+  const container = document.querySelector('#single-object #grid-wrap');
   if (sheetConfig.background) {
     container.style.backgroundImage = `url('${sheetConfig.background}')`;
     container.style.backgroundSize = 'cover';
