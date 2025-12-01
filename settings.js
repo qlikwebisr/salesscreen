@@ -28,6 +28,7 @@ export const config = {
         {
             "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
             "sheetId": "gYUVs",
+            "background": "https://spdataisreal.eu.qlikcloud.com/api/v1/apps/97b6233b-2ce6-43c1-9705-fce4897232a1/media/files/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA%20%D7%A8%D7%A7%D7%A2.jpg"
         }
     ]
 }

@@ -6,30 +6,30 @@ console.log('config', config);
 const webIntegrationId = config.webIntegrationId;
 
 /* Login function  */
-function login() {
-  function isLoggedIn() {
-    return fetch("https://" + config.tenant + "/api/v1/users/me", {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-        'qlik-web-integration-id': webIntegrationId,
-      },
-    }).then(response => {
-      return response.status === 200;
-    });
-  }
-  return isLoggedIn().then(loggedIn => {
-    if (!loggedIn) {
-      // check login
-        window.top.location.href = "https://" + config.tenant + "/login?qlik-web-integration-id=" + webIntegrationId + "&returnto=" + top.location.href;
-      throw new Error('not logged in');
-    }
-  });
-}
+// function login() {
+//   function isLoggedIn() {
+//     return fetch("https://" + config.tenant + "/api/v1/users/me", {
+//       method: 'GET',
+//       mode: 'cors',
+//       credentials: 'include',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'qlik-web-integration-id': webIntegrationId,
+//       },
+//     }).then(response => {
+//       return response.status === 200;
+//     });
+//   }
+//   return isLoggedIn().then(loggedIn => {
+//     if (!loggedIn) {
+//       // check login
+//         window.top.location.href = "https://" + config.tenant + "/login?qlik-web-integration-id=" + webIntegrationId + "&returnto=" + top.location.href;
+//       throw new Error('not logged in');
+//     }
+//   });
+// }
 
-login();
+// login();
 
 /*  Main logic */
 
@@ -39,7 +39,7 @@ var iframe = `<iframe src = "${src}"></iframe>`;
 const iframe_container = document.getElementById('iframe-container');
 iframe_container.innerHTML = iframe;  */
 
-//create code for generate random string for token, 8 letters long, use only
+//generate random string for token
 function generateRandomString(length) {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -49,36 +49,48 @@ function generateRandomString(length) {
   return result;
 }
 
+//set background based on sheet config
+function setBackground(sheetConfig) {
+  const container = document.getElementById('iframe-container');
+  if (sheetConfig.background) {
+    container.style.backgroundImage = `url('${sheetConfig.background}')`;
+    container.style.backgroundSize = 'cover';
+    container.style.backgroundPosition = 'center';
+    container.style.backgroundRepeat = 'no-repeat';
+  } else {
+    container.style.backgroundImage = 'none';
+  }
+}
+
 const randomToken = generateRandomString(8);
 console.log('Generated token:', randomToken);
 
 const iframe_container = document.getElementById('iframe-container');
 
+//initial load
 var src = `https://${config.tenant}/single/?appid=${config.sheets[0].appId}&sheet=${config.sheets[0].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
 var iframe = `<iframe src = "${src}"></iframe>`;
-//add iframe to the container
 iframe_container.innerHTML = iframe;
+setBackground(config.sheets[0]);
 
 let ind = 1;
 
 setInterval(() => {
-  //reset counter
-    if(ind >= config.sheets.length) {
-        ind= 0;
-    }
+  if(ind >= config.sheets.length) {
+    ind = 0;
+  }
 
-    //with one iframe
-    src = `https://${config.tenant}/single/?appid=${config.sheets[ind].appId}&sheet=${config.sheets[ind].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
-    //iframe = `<iframe src = "${src}"></iframe>`;
-    console.log('src', src); 
+  src = `https://${config.tenant}/single/?appid=${config.sheets[ind].appId}&sheet=${config.sheets[ind].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
+  console.log('src', src); 
 
-    var find_iframe = document.querySelector('iframe');
-    find_iframe.src = src;
+  var find_iframe = document.querySelector('iframe');
+  find_iframe.src = src;
+  
+  //update background for current sheet
+  setBackground(config.sheets[ind]);
 
-    console.log('index', ind);
-
-    ind++;
+  console.log('index', ind);
+  ind++;
 
 }, config.period * 1000);
-
 
