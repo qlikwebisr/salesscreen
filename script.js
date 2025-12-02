@@ -54,7 +54,7 @@ console.log('Generated token:', randomToken);
 
 const iframe_container = document.getElementById('iframe-container');
 
-var src = `https://${config.tenant}/single/?appid=${config.sheets[0].appId}&sheet=${config.sheets[0].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
+var src = `https://${config.tenant}/single/?appid=${config.sheets[0].appId}&sheet=${config.sheets[0].sheetId}&theme=QlikLightBreeze&opt=nointeraction,noselections&identity=${randomToken}`;
 var iframe = `<iframe src = "${src}"></iframe>`;
 //add iframe to the container
 iframe_container.innerHTML = iframe;
