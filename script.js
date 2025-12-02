@@ -53,10 +53,10 @@ function generateRandomString(length) {
 function setBackground(sheetConfig) {
   const container = document.querySelector('#single-object #grid-wrap');
   if (sheetConfig.background) {
-    container.style.backgroundImage = `url('${sheetConfig.background}')`;
-    container.style.backgroundSize = 'cover';
-    container.style.backgroundPosition = 'center';
-    container.style.backgroundRepeat = 'no-repeat';
+    container.style.setProperty('background-image', `url('${sheetConfig.background}')`, 'important');
+    container.style.setProperty('background-size', 'cover', 'important');
+    container.style.setProperty('background-position', 'center', 'important');
+    container.style.setProperty('background-repeat', 'no-repeat', 'important');
   } else {
     container.style.backgroundImage = 'none';
   }
