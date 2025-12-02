@@ -39,7 +39,7 @@ var iframe = `<iframe src = "${src}"></iframe>`;
 const iframe_container = document.getElementById('iframe-container');
 iframe_container.innerHTML = iframe;  */
 
-//generate random string for token
+//create code for generate random string for token, 8 letters long, use only
 function generateRandomString(length) {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -49,48 +49,36 @@ function generateRandomString(length) {
   return result;
 }
 
-//set background based on sheet config
-function setBackground(sheetConfig) {
-  const container = document.querySelector('#single-object #grid-wrap');
-  if (sheetConfig.background) {
-    container.style.setProperty('background-image', `url('${sheetConfig.background}')`, 'important');
-    container.style.setProperty('background-size', 'cover', 'important');
-    container.style.setProperty('background-position', 'center', 'important');
-    container.style.setProperty('background-repeat', 'no-repeat', 'important');
-  } else {
-    container.style.backgroundImage = 'none';
-  }
-}
-
 const randomToken = generateRandomString(8);
 console.log('Generated token:', randomToken);
 
 const iframe_container = document.getElementById('iframe-container');
 
-//initial load
 var src = `https://${config.tenant}/single/?appid=${config.sheets[0].appId}&sheet=${config.sheets[0].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
 var iframe = `<iframe src = "${src}"></iframe>`;
+//add iframe to the container
 iframe_container.innerHTML = iframe;
-setBackground(config.sheets[0]);
 
 let ind = 1;
 
 setInterval(() => {
-  if(ind >= config.sheets.length) {
-    ind = 0;
-  }
+  //reset counter
+    if(ind >= config.sheets.length) {
+        ind= 0;
+    }
 
-  src = `https://${config.tenant}/single/?appid=${config.sheets[ind].appId}&sheet=${config.sheets[ind].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
-  console.log('src', src); 
+    //with one iframe
+    src = `https://${config.tenant}/single/?appid=${config.sheets[ind].appId}&sheet=${config.sheets[ind].sheetId}&theme=breeze&opt=nointeraction,noselections&identity=${randomToken}`;
+    //iframe = `<iframe src = "${src}"></iframe>`;
+    console.log('src', src); 
 
-  var find_iframe = document.querySelector('iframe');
-  find_iframe.src = src;
-  
-  //update background for current sheet
-  setBackground(config.sheets[ind]);
+    var find_iframe = document.querySelector('iframe');
+    find_iframe.src = src;
 
-  console.log('index', ind);
-  ind++;
+    console.log('index', ind);
+
+    ind++;
 
 }, config.period * 1000);
+
 
