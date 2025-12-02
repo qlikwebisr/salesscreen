@@ -51,3 +51,20 @@ iframe {
   height: 100%;
   background: transparent;
 }
+/* Adding background image to sheet - gYUVs 
+//New Q4 screen
+{
+    "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
+    "sheetId": "gYUVs",
+},
+*/
+/* #grid-wrap article[role="contentinfo"] > div:has(.qv-object-dQgMgc) {
+	background-image: url('https://spdataisreal.eu.qlikcloud.com/api/v1/apps/97b6233b-2ce6-43c1-9705-fce4897232a1/media/files/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA%20%D7%A8%D7%A7%D7%A2.jpg') !important;
+	background-size:cover !important;
+	background-position:center !important;
+	background-repeat:no-repeat !important;
+}
+.qv-object-dQgMgc .top-aligned-items .cards .card:first-child .top {
+    color: #000e80 !important;
+    font-weight:600;
+} */
