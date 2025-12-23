@@ -1,6 +1,6 @@
 //settings file
 export const config = {
-    period: 180, //in seconds
+    period: 60, //in seconds
     tenant: "spdataisreal.eu.qlikcloud.com",
     webIntegrationId: "_5d4e5o5y9SyCP-0kUrr7oyZyLpKylvA",
     sheets: [
@@ -8,6 +8,11 @@ export const config = {
         {
             "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
             "sheetId": "gYUVs",
+        },
+        //New Data screen
+        {
+            "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
+            "sheetId": "35ea9b0b-79f8-4012-b7c4-c7ae35ab40a0",
         },
         //New Y/Q-TD screen
         {
