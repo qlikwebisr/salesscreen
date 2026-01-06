@@ -4,11 +4,11 @@ export const config = {
     tenant: "spdataisreal.eu.qlikcloud.com",
     webIntegrationId: "_5d4e5o5y9SyCP-0kUrr7oyZyLpKylvA",
     sheets: [
-         // //New Q4 screen
-        {
-            "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
-            "sheetId": "gYUVs",
-        },
+        // //New Q4 screen
+        // {
+          //  "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
+          //  "sheetId": "gYUVs",
+        // },
         //New Data screen
         {
             "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
