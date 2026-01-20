@@ -9,6 +9,11 @@ export const config = {
           //  "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
           //  "sheetId": "gYUVs",
         // },
+        //Move To Cloud
+        {
+            "appId": "984431d1-390d-4339-bd2b-831a5f1c553b",
+            "sheetId": "53c943ed-65d9-4090-8618-675ff85ef1de",
+        },
         //New Data screen
         {
             "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
@@ -28,11 +33,6 @@ export const config = {
         {
             "appId": "feaf2f99-bfde-4f1d-80f8-7aa7e9b9e938",
             "sheetId": "vjC",
-        },
-        //Move To Cloud
-        {
-            "appId": "984431d1-390d-4339-bd2b-831a5f1c553b",
-            "sheetId": "53c943ed-65d9-4090-8618-675ff85ef1de",
         },
     ]
 }
