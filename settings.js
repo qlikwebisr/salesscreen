@@ -17,7 +17,7 @@ export const config = {
         //New Data screen
         {
             "appId": "97b6233b-2ce6-43c1-9705-fce4897232a1",
-            "sheetId": "35ea9b0b-79f8-4012-b7c4-c7ae35ab40a0",
+            "sheetId": "f647a644-d6ca-4b6b-a6bb-9d945bd1f5bc",
         },
         //New Y/Q-TD screen
         {
