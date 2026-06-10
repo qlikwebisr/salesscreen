@@ -38,6 +38,6 @@ export const config = {
         {
             "appId": "feaf2f99-bfde-4f1d-80f8-7aa7e9b9e938",
             "sheetId": "vjC",
-        },
+        }
     ]
 }
